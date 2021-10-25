@@ -62,7 +62,7 @@ class Program {
     biz.Print();
     Driver vod = new Driver("Tom", 33, "Camry", 15);
     vod.Print();
-    Teacher uch = new Teacher("Madina", 39, "Биология", "Школа №1 г. Грозный");
+    Teacher uch = new Teacher("Tamara", 39, "Биология", "Школа №1 г. Грозный");
     uch.Print();
   }
 }
