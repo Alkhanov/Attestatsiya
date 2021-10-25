@@ -1,0 +1,68 @@
+using System;
+
+class Worker {
+  public string name;
+  public int age;
+
+  public Worker(string name, int age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  public virtual void Print() {
+    Console.WriteLine($"{name}, {age}");
+  }
+}
+
+class Businessman : Worker {
+  public string business;
+  public int dohod;
+
+  public Businessman(string name, int age, string business, int dohod) : base(name, age) {
+    this.business = business;
+    this.dohod = dohod;
+  }
+
+  public override void Print() {
+    Console.WriteLine($"Бизнесмен: {name}, {age}, Бизнес: {business}, Доход: {dohod}");
+  }
+}
+
+class Driver : Worker {
+  public string car;
+  public int stazh;
+
+  public Driver(string name, int age, string car, int stazh) : base(name, age) {
+    this.car = car;
+    this.stazh = stazh;
+  }
+
+  public override void Print() {
+    Console.WriteLine($"Водитель: {name}, {age}, Машина: {car}, Стаж вождения: {stazh}");
+  }
+}
+
+class Teacher : Worker {
+  public string predmet;
+  public string school;
+
+  public Teacher(string name, int age, string predmet, string school) : base(name, age) {
+    this.predmet = predmet;
+    this.school = school;
+  }
+
+  public override void Print() {
+    Console.WriteLine($"Учитель: {name}, {age}, {predmet}, {school}");
+  }
+}
+
+class Program {
+  public static void Main (string[] args) {
+    Businessman biz = new Businessman("Donald", 45, "Продажа мебели", 100000);
+    biz.Print();
+    Driver vod = new Driver("Tom", 33, "Camry", 15);
+    vod.Print();
+    Teacher uch = new Teacher("Madina", 39, "Биология", "Школа №1 г. Грозный");
+    uch.Print();
+  }
+}
